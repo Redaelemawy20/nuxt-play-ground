@@ -6,6 +6,5 @@
 </template>
 
 <script setup>
-import { api, getName } from '#imports';
-console.log(api);
+onMounted(makeRequest);
 </script>
