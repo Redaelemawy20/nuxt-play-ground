@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Current Route</h1>
+    <h1>This is - {{ getName() }}</h1>
   </div>
 </template>
 
