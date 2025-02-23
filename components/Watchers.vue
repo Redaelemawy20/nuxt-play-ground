@@ -11,4 +11,29 @@ watch(obj, (newValue, oldValue) => {
 });
 
 obj.count++;
+
+const state = reactive({
+  someObject: { count: 0 },
+});
+
+watch(state.someObject, (newValue, oldValue) => {
+  console.log(
+    'Triggered because a property inside someObject changed!',
+    newValue.count,
+    oldValue.count
+  );
+});
+state.someObject.count++; // ✅ This triggers the watch callback
+
+watch(
+  () => state.someObject,
+  (newValue, oldValue) => {
+    console.log(
+      'Triggered only when is object is replaced',
+      newValue.count,
+      oldValue.count
+    );
+  }
+);
+state.someObject = { count: 6 };
 </script>
