@@ -41,4 +41,13 @@ watch(
   }
 );
 state.someObject = { count: 6 };
+
+watch(
+  () => state.someObject,
+  (newValue, oldValue) => {
+    console.log('watching deeply ', newValue.count, oldValue.count);
+  },
+  { deep: true }
+);
+state.someObject.count += 20;
 </script>
