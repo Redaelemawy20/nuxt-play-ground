@@ -9,7 +9,12 @@ watch(obj, (newValue, oldValue) => {
   console.log('New Value:', newValue.count);
   console.log('Old Value:', oldValue.count);
 });
-
+watch(
+  () => obj.count,
+  (newValue, oldValue) => {
+    console.log('watching count value', newValue, oldValue);
+  }
+);
 obj.count++;
 
 const state = reactive({
