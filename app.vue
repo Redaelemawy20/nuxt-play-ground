@@ -1,5 +1,5 @@
 <template>
   <div>
-    <Watchers />
+    <NuxtPage />
   </div>
 </template>
